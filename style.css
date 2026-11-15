@@ -72,7 +72,9 @@ main { width:100%; }
 }
 body.invitation-locked { overflow:hidden; height:100svh; }
 body.invitation-locked .site-top { display:none; }
-body.invitation-locked main > section:not(#opening) { display:none; }
+body.invitation-locked main > section:not(#opening) {
+  display: flex;
+}
 body.invitation-unlocked .site-top { display:flex; }
 .date-section { display:flex; }
 .date-section img { width:100%; }
