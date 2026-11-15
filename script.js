@@ -13,7 +13,12 @@ let doorsOpened = false;
 
 openDoorsButton.addEventListener("click", () => {
   if (doorsOpened) return;
+
   doorsOpened = true;
   openDoorsButton.disabled = true;
   doorStage.classList.add("is-opening");
+
+  setTimeout(() => {
+    document.body.classList.remove("invitation-locked");
+  }, 1800);
 });
