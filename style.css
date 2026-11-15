@@ -183,15 +183,17 @@ body.invitation-unlocked .site-top { display:flex; }
   .petal-layer { display:none; }
 }
 
-/* More visible champagne and blush petals */
+/* Luxurious warm amber petal shower */
 .petal {
   background: linear-gradient(
     145deg,
-    rgba(255, 225, 190, 1),
-    rgba(232, 145, 135, 0.98)
+    #FFE8B5 0%,
+    #F5C477 35%,
+    #D99543 72%,
+    #B8732D 100%
   );
-  box-shadow: 0 2px 8px rgba(150, 85, 65, 0.28);
-  filter: drop-shadow(0 1px 3px rgba(120, 75, 55, 0.22));
+  box-shadow: 0 2px 9px rgba(150, 91, 31, 0.32);
+  filter: drop-shadow(0 1px 3px rgba(120, 75, 35, 0.24));
 }
 
 @keyframes petal-drift {
@@ -203,7 +205,7 @@ body.invitation-unlocked .site-top { display:flex; }
     opacity: 0.98;
   }
   82% {
-    opacity: 0.9;
+    opacity: 0.92;
   }
   100% {
     transform: translate3d(var(--drift), 112vh, 0)
