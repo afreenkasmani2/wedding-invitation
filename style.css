@@ -135,3 +135,50 @@ body.invitation-unlocked .site-top { display:flex; }
   .door-panel, .wax-seal-overlay { transition-duration:.01ms; }
   .door-stage.is-opening::after { animation-duration:.01ms; }
 }
+
+
+/* Page 2 welcome reveal: preserve the approved artwork and add a soft reveal. */
+.welcome-underlay {
+  filter: blur(7px) brightness(.96);
+  transform: scale(1.025);
+  transition: filter 2.2s ease-out, transform 2.8s cubic-bezier(.2,.65,.25,1);
+}
+.door-stage.is-opening .welcome-underlay {
+  filter: blur(0) brightness(1);
+  transform: scale(1);
+}
+.petal-layer {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+.door-stage.is-opening .petal-layer { opacity:1; }
+.petal {
+  position:absolute;
+  top:-8%;
+  left:var(--left);
+  width:var(--size);
+  height:calc(var(--size) * 1.38);
+  border-radius:85% 10% 85% 10%;
+  background:linear-gradient(145deg, rgba(255,248,238,.98), rgba(238,190,177,.82));
+  box-shadow:0 1px 5px rgba(130,86,67,.12);
+  opacity:0;
+  transform:rotate(var(--turn));
+}
+.door-stage.is-opening .petal {
+  animation:petal-drift var(--duration) var(--delay) ease-in infinite;
+}
+@keyframes petal-drift {
+  0% { transform:translate3d(0,-8vh,0) rotate(var(--turn)); opacity:0; }
+  10% { opacity:.82; }
+  82% { opacity:.76; }
+  100% { transform:translate3d(var(--drift),112vh,0) rotate(calc(var(--turn) + 390deg)); opacity:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .welcome-underlay { filter:none; transform:none; transition:none; }
+  .petal-layer { display:none; }
+}

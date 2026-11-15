@@ -8,6 +8,24 @@ if (revealButton && dateCard) {
 }
 
 const doorStage = document.getElementById("doorStage");
+const petalLayer = document.getElementById("petalLayer");
+
+// Add a restrained shower of ivory and champagne-blush petals over the welcome artwork.
+if (petalLayer && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const petalCount = 18;
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    petal.style.setProperty("--left", `${(i * 37 + 8) % 100}%`);
+    petal.style.setProperty("--size", `${7 + (i % 4) * 2}px`);
+    petal.style.setProperty("--duration", `${7 + (i % 5) * 1.4}s`);
+    petal.style.setProperty("--delay", `${(i % 9) * 0.42}s`);
+    petal.style.setProperty("--turn", `${i * 31}deg`);
+    petal.style.setProperty("--drift", `${((i % 2) ? 1 : -1) * (24 + (i % 5) * 12)}px`);
+    petalLayer.appendChild(petal);
+  }
+}
+
 const openDoorsButton = document.getElementById("openDoors");
 
 if (doorStage && openDoorsButton) {
