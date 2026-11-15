@@ -213,3 +213,29 @@ body.invitation-unlocked .site-top { display:flex; }
     opacity: 0;
   }
 }
+
+/* Seamless ivory flow between invitation sections */
+main {
+  background: var(--ivory);
+}
+
+.art-section {
+  background: var(--ivory);
+  margin: 0;
+  padding: 0;
+}
+
+.art-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Keep the actual opening doors midnight navy */
+#opening {
+  background: var(--ivory);
+}
+
+#opening .door-stage {
+  background: var(--navy);
+}
