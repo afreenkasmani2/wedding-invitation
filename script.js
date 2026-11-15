@@ -31,6 +31,6 @@ if (doorStage && openDoorsButton) {
     window.setTimeout(() => {
       document.body.classList.remove("invitation-locked");
       document.body.classList.add("invitation-unlocked");
-    }, 4550);
+    }, 6450);
   }, { once: true });
 }
