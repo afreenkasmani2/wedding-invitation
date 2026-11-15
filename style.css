@@ -225,12 +225,11 @@ main {
   padding: 0;
 }
 
-.art-section img {
+.art-section > img {
   display: block;
   width: 100%;
   height: auto;
 }
-
 /* Keep the actual opening doors midnight navy */
 #opening {
   background: var(--ivory);
