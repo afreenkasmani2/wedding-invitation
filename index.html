@@ -12,7 +12,7 @@
   <header class="site-top">
     <a class="brand" href="#opening" aria-label="Afreen and Irfan, back to beginning">A <span>&amp;</span> I</a>
     <nav aria-label="Invitation sections">
-      <a href="#welcome">Welcome</a>
+      <a href="#opening">Welcome</a>
       <a href="#invitation">Invitation</a>
       <a href="#date">Date</a>
       <a href="#nikah">Nikah</a>
@@ -22,12 +22,14 @@
 
   <main>
     <section class="art-section opening" id="opening" aria-label="Opening invitation">
-      <img src="assets/01-opening.png" alt="Ivory and midnight navy invitation doors with an A and I wax seal and the words Tap to Open">
-      <a class="image-action opening-action" href="#welcome" aria-label="Open the invitation and continue to the welcome page"></a>
-    </section>
-
-    <section class="art-section" id="welcome" aria-label="Welcome">
-      <img src="assets/02-welcome.png" alt="Afreen and Irfan are saying Qubool Hai, surrounded by ivory flowers, lace and pearls">
+      <div class="door-stage" id="doorStage">
+        <img class="welcome-underlay" src="assets/02-welcome.png" alt="Afreen and Irfan are saying Qubool Hai, surrounded by ivory flowers, lace and pearls">
+        <div class="door-panel door-left" aria-hidden="true"><img src="assets/door-left.png" alt=""></div>
+        <div class="door-panel door-right" aria-hidden="true"><img src="assets/door-right.png" alt=""></div>
+        <button class="seal-trigger" id="openDoors" type="button" aria-label="Tap the A and I wax seal to open the invitation">
+          <img src="assets/wax-seal.png" alt="A and I gold wax seal">
+        </button>
+      </div>
     </section>
 
     <section class="art-section" id="invitation" aria-label="Wedding invitation">
