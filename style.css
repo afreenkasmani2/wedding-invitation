@@ -182,3 +182,32 @@ body.invitation-unlocked .site-top { display:flex; }
   .welcome-underlay { filter:none; transform:none; transition:none; }
   .petal-layer { display:none; }
 }
+
+/* More visible champagne and blush petals */
+.petal {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 225, 190, 1),
+    rgba(232, 145, 135, 0.98)
+  );
+  box-shadow: 0 2px 8px rgba(150, 85, 65, 0.28);
+  filter: drop-shadow(0 1px 3px rgba(120, 75, 55, 0.22));
+}
+
+@keyframes petal-drift {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(var(--turn));
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.98;
+  }
+  82% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(var(--drift), 112vh, 0)
+      rotate(calc(var(--turn) + 390deg));
+    opacity: 0;
+  }
+}
