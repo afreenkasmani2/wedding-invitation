@@ -1,0 +1,22 @@
+name: Build wedding website preview
+
+on:
+  push:
+    branches:
+      - opening-animation-test
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout test branch
+        uses: actions/checkout@v4
+
+      - name: Package website preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: wedding-website-preview
+          path: .
