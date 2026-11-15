@@ -239,3 +239,11 @@ main {
 #opening .door-stage {
   background: var(--navy);
 }
+/* Keep the opened invitation seamless */
+.door-stage.is-opening {
+  background: var(--ivory) !important;
+}
+
+.opening {
+  background: var(--ivory) !important;
+}
