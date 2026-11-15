@@ -52,3 +52,35 @@ main { width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .door-panel { transition-duration: .01ms; }
 }
+/* Mobile: keep the opening invitation full-screen until the seal is tapped */
+@media (max-width: 600px) {
+  .site-top {
+  display: none;
+}
+  body:has(.door-stage:not(.is-opening)) {
+    overflow: hidden;
+  }
+
+  .opening {
+    min-height: 100svh;
+    height: 100svh;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .door-stage {
+    width: 100%;
+    height: 100%;
+    min-height: 100svh;
+  }
+
+  .door-stage > img,
+  .welcome-underlay {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .art-section img {
+    max-width: 100%;
+  }
+}
