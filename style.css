@@ -301,3 +301,93 @@ main {
     animation: none !important;
   }
 }
+
+
+/* INDIVIDUAL WELCOME ARTWORK LAYERS */
+
+.welcome-underlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.welcome-underlay .welcome-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.welcome-underlay .welcome-underlay,
+.welcome-underlay img:not(.welcome-background) {
+  display: block;
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* A&I monogram and circular ring */
+.welcome-underlay .welcome-monogram {
+  width: 28%;
+  left: 36%;
+  top: 16%;
+  animation: welcome-monogram 1.5s ease-out 1.1s both;
+}
+
+/* Afreen & Irfan */
+.welcome-underlay .welcome-names {
+  width: 76%;
+  left: 12%;
+  top: 36%;
+  animation: welcome-text 1.5s ease-out 1.8s both;
+}
+
+/* are saying */
+.welcome-underlay .welcome-saying {
+  width: 34%;
+  left: 33%;
+  top: 49%;
+  animation: welcome-text 1.4s ease-out 2.7s both;
+}
+
+/* Qubool Hai — dramatic zoom out */
+.welcome-underlay .welcome-qubool {
+  width: 72%;
+  left: 14%;
+  top: 55%;
+  transform: scale(1.3);
+  animation: qubool-reveal 2.2s cubic-bezier(.2,.7,.25,1) 3.5s both;
+}
+
+@keyframes welcome-monogram {
+  from { opacity: 0; transform: scale(.82); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes welcome-text {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes qubool-reveal {
+  0% { opacity: 0; transform: scale(1.3); }
+  55% { opacity: 1; transform: scale(1.12); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-underlay .welcome-underlay,
+  .welcome-underlay img:not(.welcome-background) {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
