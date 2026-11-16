@@ -248,3 +248,56 @@ main {
 .opening {
   background: var(--ivory) !important;
 }
+
+
+/* WELCOME SLIDE — elegant animated reveal */
+
+/* Soft, living background */
+.welcome-underlay {
+  animation: welcome-breathe 7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes welcome-breathe {
+  from {
+    filter: brightness(0.96) saturate(0.97);
+    transform: scale(1);
+  }
+  to {
+    filter: brightness(1.04) saturate(1.03);
+    transform: scale(1.012);
+  }
+}
+
+/* Names appear first */
+.welcome-underlay {
+  position: absolute;
+}
+
+.welcome-underlay::after {
+  content: "";
+}
+
+/* Gentle reveal of the welcome artwork */
+.door-stage.is-opening .welcome-underlay {
+  animation: welcome-reveal 2.8s ease-out both,
+             welcome-breathe 7s ease-in-out 2.8s infinite alternate;
+}
+
+@keyframes welcome-reveal {
+  from {
+    filter: blur(7px) brightness(0.94);
+    transform: scale(1.025);
+  }
+  to {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* Keep reduced-motion preferences respected */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-underlay {
+    animation: none !important;
+  }
+}
